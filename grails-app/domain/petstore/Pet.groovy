@@ -1,15 +1,14 @@
 package petstore
 
 class Pet {
-	//String uuid = UUID.randomUUID().toString()
 
 	String name
 	String dateOfBirth
 	String type
 	String breed
 	boolean isMale
-	float weight
-	float cost
+	double weight
+	double cost
 
     static constraints = {
     	name(blank: true, nullable: true)
@@ -22,7 +21,7 @@ class Pet {
     }
 
     static mapping = {
-    	dateOfBirth defaultValue: 'CURRENT_TIMESTAMP'
+    	// dateOfBirth defaultValue: 'CURRENT_TIMESTAMP'
     	isMale defaultValue: false
     	weight defaultValue: 0.0
     	cost defaultValue: 0.0
