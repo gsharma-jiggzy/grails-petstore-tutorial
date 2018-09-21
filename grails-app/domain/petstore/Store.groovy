@@ -2,7 +2,6 @@ package petstore
 
 class Store {
 
-	//String uuid = UUID.getRandomUUID().toString()
 	String address
 	String name
 

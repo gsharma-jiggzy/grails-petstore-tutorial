@@ -33,3 +33,7 @@
 /target
 
 build/
+
+\.gradle/3\.5/taskHistory/
+
+\.gradle/4\.10\.2/fileHashes/
