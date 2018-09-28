@@ -18,6 +18,10 @@ class PetController {
         respond petService.get(id)
     }
 
+    def showByName(String name) {
+        respond petService.findByName(params?.name)
+    }
+
     def create() {
         respond new Pet(params)
     }
