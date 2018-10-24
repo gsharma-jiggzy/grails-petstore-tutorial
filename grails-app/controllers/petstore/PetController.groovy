@@ -7,15 +7,26 @@ class PetController {
 
     PetService petService
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+//    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
+        def pets = petService.list(params)
+        if(params.storeId) {
+            pets = Pet.findAllByStore(Store.get(params.storeId))
+        }
         params.max = Math.min(max ?: 10, 100)
-        respond petService.list(params), model:[petCount: petService.count()]
+//        respond petService.list(params), model:[petCount: petService.count()]
+        respond([petList: pets,
+                 petCount: pets.size().toLong()])
+
     }
 
     def show(Long id) {
-        respond petService.get(id)
+        def pet = petService.get(id)
+        if(params.getLong('storeId') == pet.storeId) respond pet
+        else {
+            respond( [], [status: NOT_FOUND, view: "../notFound"])
+        }
     }
 
     def showByName(String name) {

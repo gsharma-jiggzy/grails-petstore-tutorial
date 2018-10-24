@@ -10,10 +10,6 @@ class Store {
     	address(blank: false, nullable: false)
     }
 
-    static hasHany = [
-    	inventory: Pet
-    ]
-
     static mapping = {
 
     }

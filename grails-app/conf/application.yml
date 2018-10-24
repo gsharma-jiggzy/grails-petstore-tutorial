@@ -99,7 +99,7 @@ dataSource:
 environments:
     development:
         dataSource:
-            dbCreate: update
+            dbCreate: create-drop
             url: jdbc:mysql://localhost/petstore?useUnicode=yes&zeroDateTimeBehavior=convertToNull
     test:
         dataSource:

@@ -1,0 +1,7 @@
+import petstore.Pet
+
+model {
+	Pet pet
+}
+
+json g.render(pet, [resolveTemplate: false])

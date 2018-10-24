@@ -1,0 +1,7 @@
+import petstore.Pet
+
+model {
+	Pet pet
+}
+
+json tmpl.pet(pet)

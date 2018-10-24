@@ -7,8 +7,6 @@ interface PetService {
 
     Pet get(Serializable id)
 
-    Pet findByName(String name)
-
     List<Pet> list(Map args)
 
     Long count()
