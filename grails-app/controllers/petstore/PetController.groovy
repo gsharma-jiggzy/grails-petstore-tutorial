@@ -16,8 +16,22 @@ class PetController {
         }
         params.max = Math.min(max ?: 10, 100)
 //        respond petService.list(params), model:[petCount: petService.count()]
-        respond([petList: pets,
-                 petCount: pets.size().toLong()])
+        withFormat {
+            html {respond([petList: pets,
+                 petCount: pets.size().toLong(), date: new Date()])
+            }
+            json { respond([petList: pets,
+                 petCount: pets.size().toLong(), date: new Date(), requestType: "json"]) 
+            }
+            xml { respond([petList: pets,
+                    petCount: pets.size().toLong(), date: new Date(), type: 'xml'])
+                     }
+            '*' { respond([petList: pets,
+                    petCount: pets.size().toLong(), date: new Date(), type: 'other'])
+                }
+        }
+        // respond([petList: pets,
+        //          petCount: pets.size().toLong(), date: new Date()])
 
     }
 

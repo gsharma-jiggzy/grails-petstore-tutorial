@@ -3,12 +3,10 @@ import petstore.Pet
 model {
     Iterable<Pet> petList
     Long petCount
-    Date date
 }
-
-json {
+xmlDeclaration()
+pets {
     count petCount
     pets tmpl.pet(petList ?: [])
-    date date
 }
 
