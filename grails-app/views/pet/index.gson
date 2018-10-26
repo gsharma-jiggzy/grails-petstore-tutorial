@@ -1,0 +1,12 @@
+import petstore.Pet
+
+model {
+    Iterable<Pet> petList
+    Long petCount
+}
+
+json {
+    count petCount
+    pets tmpl.pet(petList ?: [])
+}
+

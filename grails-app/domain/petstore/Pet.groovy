@@ -9,15 +9,17 @@ class Pet {
 	boolean isMale
 	double weight
 	double cost
+    Store store
 
     static constraints = {
     	name(blank: true, nullable: true)
     	dateOfBirth(blank: true, nullable: true)
     	type(blank: false, nullable: false)
     	breed(blank: true, nullable: true)
-    	isMale(blank: false, nullable: false)
+    	isMale nullable: false
     	weight(blank: false, nullable: false)
     	cost(blank: false, nullable: false)
+        store nullable: true
     }
 
     static mapping = {

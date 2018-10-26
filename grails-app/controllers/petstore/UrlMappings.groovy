@@ -9,6 +9,13 @@ class UrlMappings {
             }
         }
 
+
+        "/api/pet(.$format)?"(resources:'pet')
+        "/api/store(.$format)?"(resources:'store') {
+            "/pet"(resources:'pet')
+        }
+
+
         "/"(view:"/index")
         "500"(view:'/error')
         "404"(view:'/notFound')
